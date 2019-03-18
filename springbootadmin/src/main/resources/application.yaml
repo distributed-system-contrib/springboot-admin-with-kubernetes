@@ -1,0 +1,19 @@
+spring.application.name: springbootadmin
+
+logging.level.root: INFO
+
+server.port: 8088
+management:
+  server.port: 8081
+  endpoints.web.exposure.include: "*"
+
+spring:
+  boot.admin.context-path: /springadmin
+  cloud:
+    kubernetes:
+      discovery:
+        enabled: true
+        filter: "spec.ports?.?[name.equals('management-tcp')].toString().indexOf('management-tcp') > 0"
+      catalog-services-watch:
+        enabled: true
+        catalogServicesWatchDelay: 10000
