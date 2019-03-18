@@ -12,4 +12,4 @@ This sample project implemented three features of spring cloud.
 
 #### Flow
 
-![](./assets/Springboot admin.png)
+![](./assets/flow.png)
